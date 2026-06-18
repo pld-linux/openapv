@@ -5,13 +5,13 @@
 Summary:	OpenAPV: Open Advanced Professional Video codec
 Summary(pl.UTF-8):	Kodek OpenAPV (Open Advanced Professional Video)
 Name:		openapv
-Version:	0.2.0.1
+Version:	0.2.1.3
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/AcademySoftwareFoundation/openapv/releases
 Source0:	https://github.com/AcademySoftwareFoundation/openapv/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	5b0e941151de8bfb44c3acb8d420614e
+# Source0-md5:	56cc8cb027b33432f544126578ed5962
 URL:		https://github.com/AcademySoftwareFoundation/openapv
 BuildRequires:	cmake >= 3.12
 BuildRequires:	rpmbuild(macros) >= 1.605
@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE README.md
 %attr(755,root,root) %{_bindir}/oapv_app_dec
 %attr(755,root,root) %{_bindir}/oapv_app_enc
-%attr(755,root,root) %{_libdir}/liboapv.so.*.*.*
+%{_libdir}/liboapv.so.*.*.*
 %ghost %{_libdir}/liboapv.so.2
 
 %files devel
