@@ -97,6 +97,5 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%dir %{_libdir}/oapv
-%{_libdir}/oapv/liboapv.a
+%{_libdir}/liboapv.a
 %endif
