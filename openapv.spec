@@ -5,13 +5,13 @@
 Summary:	OpenAPV: Open Advanced Professional Video codec
 Summary(pl.UTF-8):	Kodek OpenAPV (Open Advanced Professional Video)
 Name:		openapv
-Version:	1.1.1.0
+Version:	1.1.3.0
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/AcademySoftwareFoundation/openapv/releases
 Source0:	https://github.com/AcademySoftwareFoundation/openapv/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	e337d5d1720ae604c0ec1f00f01662b7
+# Source0-md5:	7467f55a93625d0ea9431d0321eb863d
 URL:		https://github.com/AcademySoftwareFoundation/openapv
 BuildRequires:	cmake >= 3.12
 BuildRequires:	rpmbuild(macros) >= 1.605
@@ -33,7 +33,7 @@ wolnodostępnym na licencji BSD, z otwartym kodem źródłowym.
 Summary:	Header files for OpenAPV library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki OpenAPV
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Header files for OpenAPV library.
@@ -45,7 +45,7 @@ Pliki nagłówkowe biblioteki OpenAPV.
 Summary:	Static OpenAPV library
 Summary(pl.UTF-8):	Statyczna biblioteka OpenAPV
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static OpenAPV library.
@@ -86,10 +86,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/oapv_app_dec
 %attr(755,root,root) %{_bindir}/oapv_app_enc
 %{_libdir}/liboapv.so.*.*.*
-%ghost %{_libdir}/liboapv.so.1
+%ghost %{_libdir}/liboapv.so.11
 
 %files devel
 %defattr(644,root,root,755)
+%doc readme/programmers_guide.md
 %{_libdir}/liboapv.so
 %{_includedir}/oapv
 %{_pkgconfigdir}/oapv.pc
